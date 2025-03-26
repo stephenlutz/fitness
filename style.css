@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f1f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overscroll-behavior: none;
+    overflow: hidden;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    position: relative;
+}
+
+.dashboard > div {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.close {
+    color: #ff6b6b;
+}
+
+.minimize {
+    color: #4ecdc4;
+}
+
+.expand {
+    color: #45b7d1;
+}
+
+.wrapper {
+    transition: all 0.3s ease;
+}
+
+.wrapper.closed {
+    transform: scale(0);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#dock > div {
+    width: 50px;
+    height: 50px;
+    background: #f1f1f1;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#dock > div:hover {
+    background: #e0e0e0;
+}
+
+#dock > div.active {
+    background: #4ecdc4;
+    color: white;
+}
